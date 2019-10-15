@@ -51,7 +51,7 @@ class XYHistPlot(QtWidgets.QSplitter):
         ys = _compute_ys(self.histogram_bins, histograms_counts)
         self.xy_plot_data = self.xy_plot.plot(x=xs, y=ys,
                                               pen=None,
-                                              symbol="x", symbolSize=20)
+                                              symbol="o", symbolSize=20)
         self.xy_plot_data.sigPointsClicked.connect(self._point_clicked)
         for index, (point, counts) in (
                 enumerate(zip(self.xy_plot_data.scatter.points(),
@@ -67,7 +67,7 @@ class XYHistPlot(QtWidgets.QSplitter):
         ys = _compute_ys(self.histogram_bins, histograms_counts)
         self.xy_plot_data.setData(x=xs, y=ys,
                                   pen=None,
-                                  symbol="x", symbolSize=20)
+                                  symbol="o", symbolSize=20)
         for index, (point, counts) in (
                 enumerate(zip(self.xy_plot_data.scatter.points(),
                               histograms_counts))):

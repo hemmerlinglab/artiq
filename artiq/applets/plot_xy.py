@@ -37,7 +37,7 @@ class XYPlot(pyqtgraph.PlotWidget):
                 return
 
         self.clear()
-        self.plot(x, y, pen=None, symbol="x")
+        self.plot(x, y, pen=None, symbol="o")
         self.setTitle(title)
         if error is not None:
             # See https://github.com/pyqtgraph/pyqtgraph/issues/211
@@ -48,7 +48,7 @@ class XYPlot(pyqtgraph.PlotWidget):
             self.addItem(errbars)
         if fit is not None:
             xi = np.argsort(x)
-            self.plot(x[xi], fit[xi])
+            self.plot(x[xi], fit[xi], pen=None, symbol="o")
 
 
 def main():
